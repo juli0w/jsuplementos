@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title><%= content_for?(:title) ? yield(:title) : "Point Supplements" %></title>
+
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= render "layouts/header" %>
+
+  <%= render "layouts/banner" %>
+
+  <%= render "layouts/alerts" %>
+
+  <div class="row">
+    <div class="col s12 m4 l3">
+      <%= render "layouts/sidenav" %>
+    </div>
+    <div class="col s12 m8 l9">
+      <%= yield %>
+    </div>
+  </div>
+
+  <%= render "layouts/footer" %>
+
+  </body>
+</html>

@@ -1,0 +1,7 @@
+<div class="row">
+  <% [notice, alert].each do |f| %>
+    <% unless f.blank? %>
+      <div class="information-box round flash center-align"><%= notice || alert %></div>
+    <% end %>
+  <% end %>
+</div>

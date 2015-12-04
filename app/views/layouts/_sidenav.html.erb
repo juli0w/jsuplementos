@@ -1,0 +1,20 @@
+<nav class="search-nav white">
+  <div class="nav-wrapper">
+    <%= form_tag search_path, method: :get do %>
+      <div class="input-field">
+        <input id="search" type="search" name="q" value="<%= params[:q] %>" required>
+        <label for="search"><i class="material-icons blue-text">search</i></label>
+        <i class="mdi-navigation-close close"></i>
+      </div>
+    <% end %>
+  </div>
+</nav>
+
+<ul class="collection with-header">
+  <% @category_roots.each do |root| %>
+    <li class="collection-header"><h5><%= root.name %></h5></li>
+    <% root.children.each do |child| %>
+      <li class="collection-item"><%= link_to child.name, child %></li>
+    <% end %>
+  <% end %>
+</ul>
